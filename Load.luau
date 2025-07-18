@@ -10,7 +10,7 @@ function LoadHierarchy()
         return instanceTable
     end
 
-    local gameHierarchy = buildHierarchy(game)
+    local gameHierarchy = buildHierarchy(game.ReplicatedStorage)
 
     -- Function to print the hierarchy visually with indentation
     local function printHierarchy(tbl, indentLevel)
