@@ -48,5 +48,7 @@ function SetupUi(hier)
 end
 
 function Ret()
-    
+    SetupUi(1)
 end
+
+return Ret()
