@@ -1,3 +1,5 @@
+local Player = game:GetService("Players").LocalPlayer
+
 function LoadHierarchy()
     local function buildHierarchy(instance)
         local instanceTable = {}
@@ -35,9 +37,16 @@ function LoadHierarchy()
     return gameHierarchy
 end
 
--- To run the function and see the output:
--- local hierarchyTable = LoadHierarchy()
--- print(hierarchyTable) -- This will print the table address, not its contents.
--- The printHierarchy function inside LoadHierarchy already handles the visual output.
+function SetupUi(hier)
+    local Gui = Instance.new("ScreenGui", Player.PlayerGui)
+    Gui.Name = "SigmaUi"
+    local BgFrame = Instance.new("Frame", Gui)
+    BgFrame.Name = "BG"
+    BgFrame.Size = UDim2.fromScale(0.2, 0.8)
+    BgFrame.Position = UDim2.fromScale(0.7, 0.1)
+    BgFrame.BackgroundColor3 = Color3.new(0.7, 0.7, 0.7)
+end
 
-return LoadHierarchy()
+function Ret()
+    
+end
