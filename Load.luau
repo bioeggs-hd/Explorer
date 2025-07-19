@@ -40,14 +40,28 @@ end
 function SetupUi(hier)
     local Gui = Instance.new("ScreenGui", Player.PlayerGui)
     Gui.Name = "SigmaUi"
-    local BgFrame = Instance.new("Frame", Gui)
-    BgFrame.Name = "BG"
-    BgFrame.Size = UDim2.fromScale(0.2, 0.8)
-    BgFrame.Position = UDim2.fromScale(0.7, 0.1)
-    BgFrame.BackgroundColor3 = Color3.new(0.7, 0.7, 0.7)
+    local Frame = Instance.new("ScrollingFrame", Gui)
+    Frame.Name = "BG"
+    Frame.Size = UDim2.fromScale(0.35, 0.8)
+    Frame.Position = UDim2.fromScale(0.6, 0.1)
+    Frame.BackgroundColor3 = Color3.new(0.7, 0.7, 0.7)
+
+    local lay = Instance.new("UIListLayout", Frame)
+    lay.SortOrder = Enum.SortOrder.LayoutOrder
+    lay.HorizontalFlex = Enum.UIFlexAlignment.Fill
+    
+    for k, v in pairs(hier) do
+        local btn = Instance.new("TextButton", Frame)
+        btn.Text = k
+        btn.TextScaled = true
+    end
 end
 
 function Ret()
-    SetupUi(1)
+    local h = LoadHierarchy()
+    SetupUi(h)
 end
-SetupUi(1)
+
+
+
+Ret()
