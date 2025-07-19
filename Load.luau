@@ -50,5 +50,4 @@ end
 function Ret()
     SetupUi(1)
 end
-
-return SetupUi()
+SetupUi()
