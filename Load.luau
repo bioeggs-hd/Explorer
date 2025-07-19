@@ -50,4 +50,4 @@ end
 function Ret()
     SetupUi(1)
 end
-LoadHierarchy()
+SetupUi(1)
